@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>bsApp - Download</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #0f6e56 0%, #085041 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .card {
+    background: #ffffff;
+    border-radius: 20px;
+    max-width: 420px;
+    width: 100%;
+    padding: 40px 32px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+  }
+  .logo {
+    width: 96px;
+    height: 96px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, #1D9E75, #0F6E56);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 42px;
+    font-weight: 700;
+    color: #fff;
+  }
+  h1 {
+    font-size: 26px;
+    color: #1a1a1a;
+    margin-bottom: 6px;
+  }
+  .tagline {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+  .version-row {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 28px;
+  }
+  .version-row span strong { color: #0F6E56; }
+  .features {
+    text-align: left;
+    margin-bottom: 30px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+  }
+  .feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 14px;
+    font-size: 14px;
+    color: #333;
+  }
+  .feature .icon {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    background: #E1F5EE;
+    color: #0F6E56;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 13px;
+  }
+  .download-btn {
+    display: block;
+    width: 100%;
+    background: #0F6E56;
+    color: #fff;
+    padding: 16px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background 0.2s, transform 0.15s;
+    margin-bottom: 10px;
+  }
+  .download-btn:hover {
+    background: #085041;
+    transform: translateY(-2px);
+  }
+  .download-btn .sub {
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    opacity: 0.85;
+    margin-top: 4px;
+  }
+  .note {
+    font-size: 12px;
+    color: #999;
+    margin-top: 12px;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">bs</div>
+    <h1>bsApp</h1>
+    <p class="tagline">সহজ, দ্রুত ও নিরাপদ — আপনার পছন্দের অ্যাপ</p>
+
+    <div class="version-row">
+      <span>Version: <strong>1.0.0</strong></span>
+      <span>সর্বশেষ আপডেট: <strong id="latestDate"></strong></span>
+    </div>
+
+    <div class="features">
+      <div class="feature"><div class="icon">✓</div>সহজ এবং দ্রুত ব্যবহারযোগ্য ইন্টারফেস</div>
+      <div class="feature"><div class="icon">✓</div>অফলাইনেও কাজ করার সুবিধা</div>
+      <div class="feature"><div class="icon">✓</div>সম্পূর্ণ নিরাপদ ডেটা সংরক্ষণ</div>
+      <div class="feature"><div class="icon">✓</div>নিয়মিত আপডেট এবং নতুন ফিচার</div>
+    </div>
+
+    <a href="bsApp.apk" download class="download-btn">
+      Download bsApp.apk
+      <span class="sub">Android • APK ফাইল</span>
+    </a>
+    <p class="note">ডাউনলোড করার আগে নিশ্চিত করুন bsApp.apk ফাইলটি এই index.html-এর একই ফোল্ডারে আছে।</p>
+  </div>
+
+  <script>
+    // সবসময় আজকের তারিখ দেখাবে (চাইলে নির্দিষ্ট তারিখে পরিবর্তন করুন)
+    const d = new Date();
+    const options = { day: '2-digit', month: 'short', year: 'numeric' };
+    document.getElementById('latestDate').textContent = d.toLocaleDateString('en-GB', options);
+  </script>
+</body>
+</html>
